@@ -9,7 +9,7 @@
 
 % A
 % avataan kuva
-im = imread('kamui-vaasassa.jpg');
+im = imread('kamui-vaasassa-1.jpg');
 % katsotaan kuva
 imshow(im)
 
@@ -22,12 +22,13 @@ col % leveys 1280 saraketta (pikseliä)
 
 % C
 % rajataan kuvasta neliö
-% mutta ei ihan vasemmasta reunasta
-im = im(:,20:row+19,:);
+% (tehtävänantoa vastoin tallennetaan se uuteen muuttujaan
+% seuraavaa tehtävää silmällä pitäen)
+imedit = im(:,20:row+19,:);
 
 % D
 % suurennetaan kuva 1024x1024 kokoiseksi
-im = imresize(im,[1024,1024]);
+imedit = imresize(imedit,[1024,1024]);
 % katsotaan taas kuva
 imshow(im)
 % tallennetaan uusi kuva
