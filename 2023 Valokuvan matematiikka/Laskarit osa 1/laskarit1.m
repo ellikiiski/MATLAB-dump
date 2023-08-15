@@ -30,10 +30,15 @@ imedit = im(:,20:row+19,:);
 % suurennetaan kuva 1024x1024 kokoiseksi
 imedit = imresize(imedit,[1024,1024]);
 % katsotaan taas kuva
-imshow(im)
+imshow(imedit)
 % tallennetaan uusi kuva
 % ensin pikku temput että menee oikeeseen kansioon
 scriptfolder = mfilename('fullpath');
 newpic = append(scriptfolder,'-isoi-kamui-vaasassa.jpg');
 % tallennetaan uusi kuva
 imwrite(im,newpic);
+
+%% TEHTÄVÄ 2
+
+% A
+% avataan toinen kuva
