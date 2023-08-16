@@ -4,6 +4,8 @@
 %
 % Tämä skripti löytyy myös osoitteesta
 % https://github.com/ellikiiski/MATLAB-dump/tree/main/2023%20Valokuvan%20matematiikka/Laskarit%20osa%201
+% suosittelen kloonaamaan sieltä, jotta käytettävät kuvat on
+% automaattisesti oikeassa kansiossa
 
 clear all;
 close all;
@@ -154,7 +156,7 @@ im4 = im4(:,180:1140,:);
 
 % A
 % tehdään kuvasta mustavalkoinen keskiarvon avulla
-bwaverage = im4(:,:,1)*0.333 + im4(:,:,2)*0.333 + im4(:,:,3)*0.333;
+bwaverage = im4(:,:,1)*(1/3) + im4(:,:,2)*(1/3) + im4(:,:,3)*(1/3);
 
 % B
 % koitetaan seuraavaksi NTSC painotusta eri väreille
@@ -212,6 +214,57 @@ imshow(im5new);
 
 %% TEHTÄVÄ 6
 
+% avataan kuva
+K = imread('kuvat input/liverpool2023.jpg');
+[N, M, s] = size(K);
 
+% A
+K = rescale(K);
 
+% B
+% luodaan mustavalkokuva keskiarvotaktiikalla
+H = K(:,:,1)*(1/3) + K(:,:,2)*(1/3) + K(:,:,3)*(1/3);
 
+% C
+% luodaan indikaattorimatriisi
+h = 0.1;
+ind_black = H<h;
+
+% D
+% luodaan kuva K2 indikaattorimatriisia hyödyntäen
+% en tiedä onko tähän helmpompi tapa kuin for-looppi, 
+% mutta nyt väsyttää niin ei jaksa tutkia asiaa
+K2 = K;
+for i = 1:N
+    for j = 1:M
+        if H(i,j) == 1
+            K(i,j,1) = h;
+            K(i,j,2) = h;
+            K(i,j,3) = h;
+        end
+    end
+end
+
+% E
+% ei kirkastetakaan vaan ppäin vastoin 
+% tummennetaan kuvaa vielä vähän gammakorjauksella
+gamma = 1.5;
+K2r = rescale(K2(:,:,1).^(gamma));
+K2g = rescale(K2(:,:,2).^(gamma));
+K2b = rescale(K2(:,:,3).^(gamma));
+K2 = cat(3,K2r,K2g,K2b);
+
+% tarkastellaan kuvien K ja K2 eroja, 
+% jotka eivät ole järin suuret, 
+% koska kuva on muutenkin ennemmin yli- kuin alivaloittunut
+figure
+subplot(1,2,1);
+imshow(K);
+subplot(1,2,2);
+imshow(K2);
+% en tiedä tykkäänkö liian tummista kuvista, 
+% mutta mun mielestä tää lopputulos on parempi
+
+%% noi kommentit tuskin paljon auttoi ymmärtämään koodia...
+%  koitan ens kerralla kirjottaa jotain kunnollista
+%  meni vähän myöhäiseksi näiden teko, mutta kivoja tehtäviä!
