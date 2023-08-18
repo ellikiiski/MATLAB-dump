@@ -3,7 +3,7 @@
 % Elli Kiiski
 %
 % Tämä skripti löytyy myös osoitteesta
-% https://github.com/ellikiiski/MATLAB-dump/tree/main/2023%20Valokuvan%20matematiikka/Laskarit%20osa%2012
+% https://github.com/ellikiiski/MATLAB-dump/tree/main/2023%20Valokuvan%20matematiikka/Laskarit%20osa%202
 
 close all;
 clear all;
