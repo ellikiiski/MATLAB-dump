@@ -204,6 +204,23 @@ imshow(im_own)
 
 %% TEHTÄVÄ 6
 
-% en kerkee nyt tekemään :(
-% riippuu millon tarkistat nää, 
-% saattaa olla githubissa tehtynä myös tämä
+% A
+% luodaan matriisit
+G1 = [-1, 0, 1; -2, 0, 2; -1, 0, 1];
+G2 = [-1, -2, -1; 0, 0, 0; 1, 2, 1];
+
+% B
+% filtteröidään niillä lisää jo aiemmin filtteröityä kuvaa
+im_own_1 = convn(double(im_own),G1,'same');
+im_own_2 = convn(double(im_own),G2,'same');
+
+% C
+% lasketaan magnitudi
+magnitude = sqrt(im_own_1.^2 + im_own_1.^2);
+
+yht = (im_own_1+im_own_2);
+figure
+subplot(1,2,1)
+imshow(im_own)
+subplot(1,2,2)
+imagesc(yht)
