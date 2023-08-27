@@ -3,7 +3,7 @@
 % Elli Kiiski
 %
 % Tämä skripti löytyy myös osoitteesta
-% https://github.com/ellikiiski/Valokuvan-matematiikka-2023/tree/main/Laskarit%20osa%203
+% https://github.com/ellikiiski/Valokuvan-matematiikka-2023/tree/main/Laskarit%20osa%204
 % (repositorion nimi muuttunut)
 
 close all;
