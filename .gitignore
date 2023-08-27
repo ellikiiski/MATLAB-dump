@@ -1,5 +1,4 @@
 # yleiset
 *.asv
-# valokuvan matematiikka
-## tuloksena syntyvat kuvat
-/2023 Valokuvan matematiikka/Laskarit osa 1/kuvat output
+# tuloksena syntyvat kuvat
+*/kuvat output
