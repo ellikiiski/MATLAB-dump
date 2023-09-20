@@ -2,8 +2,8 @@
 % Valokuvan matematiikka 2023
 % Elli Kiiski
 %
-% Tämä skripti löytyy myös osoitteesta
-% https://github.com/ellikiiski/MATLAB-dump/tree/main/2023%20Valokuvan%20matematiikka/Laskarit%20osa%203
+% Tämä skripti löytyy osoitteesta
+% https://github.com/ellikiiski/Valokuvan-matematiikka-2023/tree/main/Laskarit%20osa%203
 % 
 % KOMMENTTI: tehtävänannoissa olisi parantamisen varaa,
 % aika monesti en vielä tehtävää tehtyänikään ole varma 
