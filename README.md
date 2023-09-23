@@ -9,4 +9,6 @@ Helsingin yliopiston kurssin Valokuvan matematiikka tuotoksia
   * [osa 2](https://github.com/ellikiiski/Valokuvan-matematiikka-2023/tree/main/Laskarit%20osa%202)
   * [osa 3](https://github.com/ellikiiski/Valokuvan-matematiikka-2023/tree/main/Laskarit%20osa%203)
   * [osa 4](https://github.com/ellikiiski/Valokuvan-matematiikka-2023/tree/main/Laskarit%20osa%204)
-* Projektityö (tulossa pian)
+* Projektityö
+  * Valmis raportti (tulossa pian)
+  * [MATLAB-koodit](https://github.com/ellikiiski/Valokuvan-matematiikka-2023/tree/main/Loppuprojekti/MATLAB)
