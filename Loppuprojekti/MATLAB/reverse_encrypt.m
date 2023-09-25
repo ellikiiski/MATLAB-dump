@@ -1,13 +1,13 @@
-% YKSINKERTAINEN STEGANOGRAFINEN SALAUS
+% PARANNELTU STEGANOGRAFINEN SALAUS - KÄÄNTEINEN
 % olettaa parametreina annettujen kuvien olevan samankokoiset
 
-function im_encrypt = simple_encrypt(im1,im2)
+function im_encrypt = reverse_encrypt(im1,im2)
 
     % tarkistetaan, että kuvat ovat samankokoiset
-    msg_error = "Pictures are not same size!"; % virheteksti
+    msg_error1 = "Pictures are not same size!"; % virheviesti
     if (size(im2) ~= size(im2))
         % kuvat olivat erikokoiset
-        error(msg_error) % virhe
+        error(msg_error1) % virhe
     else
         % voidaan piilottaa kuva (im2) toiseen samankokoiseen kuvaan (im1)
         im_size = size(im1);
@@ -24,6 +24,16 @@ function im_encrypt = simple_encrypt(im1,im2)
                     % eli ensimmäistä bittiä
                     s = im1_pixel_binary(1:4);
                     e = im2_pixel_binary(1:4);
+                    % otetaan komplementti salaisen kuvan (im2) biteistä
+                    for b = 1:4
+                        if (e(5-b) == '1')
+                            e(b) = '1';
+                        elseif (e(5-b) == '0')
+                            e(b) = '0';
+                        else
+                            error("haloo")
+                        end
+                    end
                     % muodostetaan salatulle pikselille arvo yhdistämällä
                     % salattavan kuvan (im2) 4 bittiä
                     % toisen kuvan (im1) 4 bitin perään

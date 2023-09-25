@@ -52,3 +52,25 @@ title("Salattu ja purettu kuva")
 subplot(1,3,3)
 imshow(diff_simple_d)
 title("Kuvien erotus")
+
+%% BITIT SEKOITTAVAT SALAUKSET
+
+% komplementtimetodi
+complemnt_e = complement_encrypt(im1,im2); % piilotettu kuva
+diff_comp_e = rescale(double(im1)-double(complemnt_e)); % erotuskuva
+% käänteismetodi
+reverse_e = reverse_encrypt(im1,im2); % piilotettu kuva
+diff_rev_e = rescale(double(im1)-double(reverse_e)); % erotuskuva
+figure
+subplot(2,2,1)
+imshow(complemnt_e)
+title("Komplementtimetodilla salattu kuva")
+subplot(2,2,2)
+imshow(diff_comp_e)
+title("Komplemettimetodin erotus alkuperäiseen")
+subplot(2,2,3)
+imshow(reverse_e)
+title("Käänteisellä metodilla salattu kuva")
+subplot(2,2,4)
+imshow(diff_rev_e)
+title("Käänteisen metodin erotus alkuperäiseen")
