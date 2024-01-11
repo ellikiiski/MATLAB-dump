@@ -1,4 +1,18 @@
 # yleiset
 *.asv
+*.aux
+*.log
+*.gz
+*.bbl
+*.bcf
+*.blg
+*.xml
+*.sav
+*.bak
+*.dvi
+*.toc
+*.eps
+*.out
+
 # tuloksena syntyvat kuvat
 */kuvat output
